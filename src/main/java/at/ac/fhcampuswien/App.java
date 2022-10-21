@@ -6,6 +6,7 @@ import java.util.Scanner;
 public class App {
 
     // Task 1: One Month Calendar
+    /*
     public static void oneMonthCalendar(int days, int firstDay) {
         int columns = 0;
         int rows = 0;
@@ -33,11 +34,38 @@ public class App {
             System.out.print(" ");
             }
         if (columns % 7 != 0) {
-            System.out.print("");
+            System.out.println("");
             }
         }
-    }
+    }*/
 
+    //https://www.w3schools.com/java/java_methods_param.asp
+    public static void oneMonthCalendar(int Monthdays, int Weekdays){
+
+        int g=1;
+
+        for (int i=0;i<5;i++){
+            for (int j=0;j<7;j++) {
+                if (j < Weekdays-1 && i == 0){
+                    System.out.print("   ");
+                }else if(g < 9 && i <= 1){
+                    System.out.print(" "+ g++ + " ");
+                }else if (g >= 10 && j == 0){
+                    System.out.print(g++);
+                }else if (g >= 9 && j == 6) {
+                    System.out.print(" " + g++ + " ");
+                }else {
+                    System.out.print(" "+ g++);
+                }
+
+                if (g == Monthdays+1 && j != 6){
+                    System.out.print(" ");
+                    break;
+                }
+            }
+            System.out.println();
+        }
+    }
     // Task 2: Pseudo Random Numbers
     public static long[] lcg(long seed) {
         long[] returnArray = new long[10];
